@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA/3D — Tech, redesigned</title>
+  <meta name="description" content="An atelier of tech devices engineered for the next decade — sound, sight and motion, reimagined in three dimensions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <nav class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">✦</span>
+        <span>NOVA<span class="text-gradient">/3D</span></span>
+      </a>
+      <div class="nav-actions">
+        <a href="#" id="nav-admin-btn" class="btn btn-outline btn-sm">Admin</a>
+        <a href="#catalog" class="btn btn-primary btn-sm">Explore</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="grid-bg-overlay"></div>
+    <div class="container hero-grid">
+      <div class="hero-text reveal-left">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          New collection · 2026
+        </div>
+        <h1 class="display">
+          Tech that <span class="text-gradient">moves</span> with you.
+        </h1>
+        <p class="lead">
+          An atelier of devices engineered for the next decade — sound, sight and motion, reimagined in three dimensions.
+        </p>
+        <div class="cta-row">
+          <a href="#catalog" class="btn btn-primary btn-lg">Explore catalog →</a>
+          <a href="#features" class="btn btn-outline btn-lg">Why NOVA</a>
+        </div>
+        <div class="stats">
+          <div><div class="stat-num">12k+</div>shipped</div>
+          <div><div class="stat-num">4.9★</div>rated</div>
+          <div><div class="stat-num">∞</div>future-proof</div>
+        </div>
+      </div>
+
+      <div class="hero-3d reveal-scale">
+        <div class="pulse-glow"></div>
+        <canvas id="scene3d"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="container section">
+    <div class="features-grid">
+      <div class="glass feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Engineered for speed</h3>
+        <p>Sub-ms latency across every device in the line.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">🛡</div>
+        <h3>Built to outlast</h3>
+        <p>Aerospace alloys, repairable by design.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">◫</div>
+        <h3>Spatial-first</h3>
+        <p>Native depth, gesture and gaze support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" class="container section catalog">
+    <div class="catalog-head">
+      <div>
+        <p class="mono accent">// Catalog</p>
+        <h2 class="display lg">Current collection</h2>
+      </div>
+      <span class="mono muted" id="product-count">0 items</span>
+    </div>
+    <div id="product-grid" class="product-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 NOVA/3D Atelier</p>
+      <p class="mono">Built with depth.</p>
+    </div>
+  </footer>
+
+  <div id="admin-modal" class="modal-overlay">
+    <div class="glass modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <div class="brand-mark modal-icon">✦</div>
+      <h3 class="display" style="font-size: 1.5rem; margin-bottom: 0.5rem;">System Access</h3>
+      <p class="muted" style="margin-bottom: 1.5rem; font-size: 0.9rem;">Authenticate to access the NOVA/3D database.</p>
+      
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label class="mono accent" for="admin-user">Username</label>
+          <input type="text" id="admin-user" class="form-input" placeholder="sysadmin" required />
+        </div>
+        <div class="form-group">
+          <label class="mono accent" for="admin-pass">Password</label>
+          <input type="password" id="admin-pass" class="form-input" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+          Initialize Session
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="scene3d.js"></script>
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
